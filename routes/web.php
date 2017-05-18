@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'BasketController@index');
+
+/*Route::get('/', function () {
     return view('welcome');
 });
+Route::get('index', 'BasketController@index');
+*/
