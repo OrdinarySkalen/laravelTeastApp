@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'BasketController@index');
+/*Route::get('/', 'BasketController@index');
+Route::post('/','BasketController@index');*/
+Route::match(['get', 'post'],'/', 'BasketController@index');
+//Route::post('/', 'BasketController@index2');
+
 
 /*Route::get('/', function () {
     return view('welcome');
