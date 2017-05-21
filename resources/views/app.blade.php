@@ -6,22 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Baskets Application</title>
-
     <!-- Fonts-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color:#090909;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+
 </head>
-<body>
+<body class="">
 <div class="container">
     @yield('content')
 </div>
