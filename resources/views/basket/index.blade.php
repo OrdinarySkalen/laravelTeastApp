@@ -11,9 +11,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="sr-only" for="basketCount">Count of baskets:</label>
+            <label class="sr-only" for="basketCount">Count of baskets</label>
             <div class="input-group">
-                <div class="input-group-addon">Count of baskets:</div>
+                <div class="input-group-addon">Count of baskets</div>
                 <input type="number" class="form-control" id="basketCount" name="basketCount"
                        min="1" value="30">
             </div>
