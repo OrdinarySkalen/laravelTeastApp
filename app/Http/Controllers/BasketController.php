@@ -6,10 +6,15 @@ use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $userBasketCount = 100;
+        $userBasketCount = 101;
         $basketCount = 31;
+
+        if ($request->userBasketCount !== null && $request->basketCount !== null) {
+            $userBasketCount = 1 + $request->userBasketCount;
+            $basketCount = 1 + $request->basketCount;
+        }
 
         $taskB = "";
         $taskC = "";
@@ -30,31 +35,6 @@ class BasketController extends Controller
         return view('basket.index', compact('userBasket', 'baskets',
             'taskB', 'taskC'));
     }
-
-    /*public function index2(Request $request)
-    {
-        $userBasketCount = $request->input(userBasketCount,100);
-        $basketCount = $request->input(basketCount,30);
-
-        $taskB = "";
-        $taskC = "";
-        $userBasket = BasketController::fillBasket($userBasketCount);
-        $baskets = [];
-
-        for ($i = 1; $i < $basketCount + 1; $i++) {
-            $basket = BasketController::fillBasket(rand(1, 9));
-            $baskets[$i] = $basket;
-            if (BasketController::existAllElements($basket, $userBasket) === 1) {
-                $taskB .= "#$i ";
-            }
-            if (BasketController::existSingleElement($basket, $userBasket) === 1) {
-                $taskC .= "#$i ";
-            }
-        }
-
-        return view('basket.index', compact('userBasket', 'baskets',
-            'taskB', 'taskC'));
-    }*/
 
     public function fillBasket(int $value)
     {
@@ -104,14 +84,5 @@ class BasketController extends Controller
         if ($count === 0)
             return 0;
         return 1;
-    }
-
-    public function printBasket($title, $balls)
-    {
-        $text = "$title: ";
-        foreach ($balls as $value) {
-            $text .= "$value, ";
-        }
-        return $text;
     }
 }
