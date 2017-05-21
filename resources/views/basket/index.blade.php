@@ -3,9 +3,9 @@
 @section('content')
     <form action="" class="form-horizontal">
         <div class="form-group">
-            <label class="sr-only" for="userBasketCount">Balls in user's basket</label>
+            <label class="sr-only" for="userBasketCount">User's basket capacity</label>
             <div class="input-group">
-                <div class="input-group-addon">Balls in user's basket:</div>
+                <div class="input-group-addon">User's basket capacity</div>
                 <input type="number" class="form-control" id="userBasketCount"
                        name="userBasketCount" min="1" value="100">
             </div>
